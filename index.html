@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html >
+   <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Instagram Video/Images Downloader : Fast and Free </title>
+
+      <!-- Change these meta tags according to your description and keywords -->
+      <meta name="Description" content="Download your Instagram video and images just paste link and download">
+      <meta name="Keywords" content="Instagram video, Download video, Download Instagram video, Instragram viedo downloader, Instragram Status downloader, Instragram images downloader, Instram viedo, Dowmload instragram video, Instragram video download, Instagram status download, Instagram video downloader, Instagram video download">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <!-- Latest compiled and minified font awesome CSS -->
+      <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' />
+      <!-- custom CSS -->
+      <style type="text/css">
+         
+
+
+/*-----------General & Basic Styles------------*/
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+}
+* {
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #262626;
+}
+a:hover {
+    cursor: pointer;
+    cursor: hand;
+    text-decoration: none;
+}
+
+/*-----------Navbar------------*/
+
+.navbar {
+    z-index: 16;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    height: 77px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    border-bottom: 1px solid transparent;
+}
+.navscroll {
+    background-color: white;
+    border-bottom: 1px solid #e6e6e6;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.navbar a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.navbar a i {
+    font-size: 45px;
+    height: 43px;
+    width: 43px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 6px;
+    line-height: 42px;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.instaanim {
+    -webkit-transform: rotate(360deg) scale(1.1);
+    -ms-transform: rotate(360deg) scale(1.1);
+    transform: rotate(360deg) scale(1.1);
+    color: white;
+    margin-right: 0px;
+    background: -webkit-gradient(linear, right top, left bottom, from(#4c68d7), color-stop(#8a3ab9), color-stop(#cd486b), color-stop(#fb8750), to(#FF9800));
+    background: -webkit-linear-gradient(right top, #4c68d7, #8a3ab9, #cd486b, #fb8750, #FF9800);
+    background: -o-linear-gradient(right top, #4c68d7, #8a3ab9, #cd486b, #fb8750, #FF9800);
+    background: linear-gradient(to left bottom, #4c68d7, #8a3ab9, #cd486b, #fb8750, #FF9800);
+}
+.shrink {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+.navbar span {
+    background-image: url("https://drive.google.com/file/d/1_nkqVtsU-lvZ0C-8drjUbhp77K9H2FiJ/view?usp=sharing");
+    height: 55px;
+    width: 230px;
+    display: inline-block;
+    -webkit-transition: .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.lil-bar {
+    background: #fff;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border: solid 1px #c8d7e1;
+    border-radius: 3px;
+    height: 35px;
+    line-height: 1;
+    z-index: 50000;
+    -webkit-transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -o-transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+/*-----------content------------*/
+
+.header {
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+.card {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    padding: 10px 0;
+}
+.card h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    line-height: 40px;
+    margin: 0 40px 10px;
+    text-align: center;
+    font-weight: 500;
+}
+.card h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 20px;
+    margin: 0 40px 10px;
+    text-align: center;
+    color: #999;
+    font-weight: 600;
+}
+.inputform {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.instinput {
+    width: 100%;
+    border: 1px solid #efefef;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0;
+    -ms-flex: 1 0 0;
+    flex: 1 0 0px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 0 7px 8px;
+    text-overflow: ellipsis;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 10px;
+}
+.instinput:focus {
+    border: 1px solid #b2b2b2;
+}
+.instabutton {
+    cursor: pointer;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    margin-top: 10px;
+}
+.advertisement {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    padding: 10px 0;
+}
+.advertisement p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 90px;
+    text-align: center;
+    font-weight: 500;
+}
+.resultdiv {
+    margin-top: 25px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    padding: 10px 0;
+}
+.profileheader {
+    height: 55px;
+    border-bottom: 1px solid #efefef;
+}
+.profilepic {
+    height: 40px;
+    width: 40px;
+    margin-left: 15px;
+    position: absolute;
+}
+.profilename,
+.username {
+    margin-left: 65px;
+    margin-top: 10px;
+}
+.profilename {
+    font-weight: bolder;
+    color: #3d3b3b;
+}
+.downloadimage {
+    width: 100%;
+    height: auto;
+}
+.downloadbutton {
+    cursor: pointer;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.downloadbutton:hover {
+    color: #fff;
+}
+.downloadbutton:focus {
+    color: #fff;
+    -webkit-appearance: none;
+}
+.resultdiv {
+    display: none;
+    margin-bottom: 50px;
+}
+
+/*-----------Footer------------*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    text-align: center;
+    color: #CCC;
+    background-color: #fff;
+    border-top: 1px solid #e6e6e6;
+}
+footer p {
+    padding: 10.5px;
+    margin: 0px;
+    line-height: 100%;
+}
+      </style>
+   </head>
+   <body>
+      <div class="navbar"><a href='#'><i class="fa fa-instagram"></i><span style="https://drive.google.com/file/d/1_nkqVtsU-lvZ0C-8drjUbhp77K9H2FiJ/view?usp=sharing"></span></a></div>
+      <!-- container-fluid -->
+
+      <div class="container-fluid">
+
+         <!-- row -->
+         <div class="row header">
+         	<div class="row">
+            <!-- col -->
+            <div class="col-md-6 col-md-offset-3 advertisement">
+               <div class="text-center">
+                  <p>Advertisement</p>
+               </div>
+            </div>
+            <br/>
+            <br/>
+            <!-- col -->
+            <div class="col-md-6 col-md-offset-3 card">
+               <!-- header -->
+
+               <div class="text-center">
+                  <h1>Download Instragram video/Images</h1>
+                  <h2>Just enter your video URL and download</h2>
+                  <div class="col-md-10 col-md-offset-1 inputform">
+                     <div class="col-md-8"><input type="text" id="url" class="instinput" placeholder="Please enter a Instagram URL"/ ></div>
+                     <div class="col-md-4"><button id="download" class="instabutton" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing" >Download</button></div>
+                  </div>
+               </div>
+          
+               <!-- header end. -->
+            </div>
+            <!-- col end. -->          
+         </div>
+         <!-- row end.--> 
+         <!-- row -->
+         <br/>
+         <div class="row">
+            <!-- col -->
+            <div class="col-md-6 col-md-offset-3 advertisement">
+               <div class="text-center">
+                  <p>Advertisement</p>
+               </div>
+            </div>
+            <!-- col end. -->          
+         </div>
+         <!-- row end.--> 
+         <!-- row -->
+         <div class="row">
+            <!-- col -->
+            <div class="col-md-4 col-md-offset-4 resultdiv">
+               <div class="profileheader"><a href="/"><img class="profilepic img-circle" src="" ></a><a href="#" class="profilename">fullname</a><br>
+                  <a href="#" class="username"><span id="username" class="text-muted">username</span></a>
+               </div>
+			    <!-- Data div -->
+               <div id="data">
+               </div>
+			    <!-- Data div end. -->
+            </div>
+            <!-- col end. -->          
+         </div>
+         <!-- row end.--> 
+      </div>
+      <!-- container-fluid end. -->
+      <!-- <div class="container text-center" style="text-align: left">
+      	<h1> How To Download </h1>
+      	<h5>1: Go Instragram and select your video </h5>
+      	<h5>2: Copy your video/image link </h5>
+      	<h5>3: Paste selected vedio/image link in website </h5>
+      	<h5>4: Click Download button </h5>
+      	<h5>5: After clicked download button save vedio </h5>
+      </div> -->
+	  <!-- footer -->
+      <footer>
+         <p>© 2020<a href="https://www.enotespoint.in/"> Mayur patil </a>, All Rights Reserved</p>
+      </footer>
+	  <!-- footer end. -->
+	  <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+	  <!-- Main function java script -->
+      <!-- <script src="js/MobGyan_custom.js"></script> -->
+      <script type="text/javascript">
+         $(document).ready(function() {
+         // grab the initial top offset of the navigation 
+            var stickyNavTop = $('.navbar').offset().top;
+            // our function that decides weather the navigation bar should have "fixed" css position or not.
+            var stickyNav = function(){
+             var scrollTop = $(window).scrollTop(); // our current vertical position from the top 
+             // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+             // otherwise change it back to relative
+             if (scrollTop > stickyNavTop) { 
+                 $('.navbar').addClass('navscroll').find('span').addClass('shrink')
+                      $('.fa-instagram').addClass('instaanim');
+             } else {
+                 $('.navbar').removeClass('navscroll');
+               $('.navbar span').removeClass('shrink');
+               $('.fa-instagram').removeClass('instaanim');
+             }
+         };
+         stickyNav();
+         // and run it again every time you scroll
+         $(window).scroll(function() {
+            stickyNav();
+         });
+      
+   $("#download").click(function() {
+
+      // url 
+      var vid_url = $("#url").val();
+
+      // valid if url is correct 
+      
+      if(isUrlValid(vid_url)){    
+
+        $('#download').button('loading');
+       $('.resultdiv').hide();
+       $('#data').html(' ');
+       
+        //ajax call
+        $.ajax({
+          type:"POST",      
+          dataType:'json',
+          url:'MobGyan-service.php',
+          data:{url:vid_url},
+          // success function 
+          success:function(data){
+            console.log(data);
+         // Check Service response through status parameter
+         if(data.status=="success"){
+            $('.profilepic').attr('src', data.profile_pic_url);
+            $('#username').html(data.username);
+            $('.profilename').html(data.full_name);
+            
+            // Check if single image post
+            if(data.flag=="image"){
+               $('#data').html('<img  src="'+data.image+'" class="downloadimage" ></img><a href="'+data.image+'" class="downloadbutton pull-right" >Download</a>');
+            
+            }
+            
+            //check if single video post
+            if(data.flag=="video"){
+               $('#data').html('<video id="video" width="100%" autoplay="autoplay" loop="loop" muted="muted" controls><source src="'+data.videourl+'" type="video/mp4" >Your browser does not support the video tag. </video><a href="'+data.videourl+'" class="downloadbutton pull-right" >Download</a><p style="margin-left:10px; margin-top:10px;" >Right-Click on video and save video</p>');
+               $("#video")[0].load();
+            }
+            
+            //check if multiple video/image post
+            if(data.flag=="media"){
+               
+               $.each(data.medias, function(i, media) {
+                  
+                    if(media['1']=="image"){
+                        $('#data').append('<img  src="'+media['0']+'" class="downloadimage" ></img><a href="'+media['0']+'" class="downloadbutton pull-right" >Download</a>');
+                    }else{
+                       
+                       $('#data').append('<video id="video'+i+'" width="100%" autoplay="autoplay" loop="loop" muted="muted" controls><source src="'+media['0']+'" type="video/mp4" >Your browser does not support the video tag. </video><a href="'+media['0']+'" class="downloadbutton pull-right" >Download</a><p style="margin-left:10px; margin-top:10px;" >Right-Click on video and click "save video as.."</p>');
+                      $("#video"+i)[0].load();
+                  
+                    }
+                   
+               
+               });
+            
+            }
+            //If everything goes right we will show the result
+             $('.resultdiv').show();
+             $('#download').button('reset');
+             
+         }else{
+            
+            alert('something went wrong');
+             $('#download').button('reset');
+         }
+         
+          }
+        })
+      }else{ 
+        alert('URL seems invalid.');
+        $('#download').button('reset');
+     }
+   });
+   //Validations for url
+   function isUrlValid(url) {
+            return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+         }  
+      });
+      </script>
+   </body>
+</html>
+
